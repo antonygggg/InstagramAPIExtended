@@ -7,21 +7,19 @@ this version uses https://github.com/LevPasha/Instagram-API-python
 
 Python Instagram API as his base
 
-this is a beta version and it comes as is
 
-
+this is a unofficial beta version
+which is still in development
+and comes as is
 
 '''
 
-from InstagramAPI import InstagramAPI
-
-
-import csv
-import time
-import json
-
 
 class InstagramAPIExtended:
+    from InstagramAPI import InstagramAPI
+    import csv
+    import time
+    import json
 
     version = 'InstagramAPIExtended 0.0.7 beta https://i.instagram.com/api/v1/'
 
