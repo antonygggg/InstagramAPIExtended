@@ -25,18 +25,20 @@ class InstagramAPIExtended:
 
     version = 'InstagramAPIExtended 0.0.7 beta https://i.instagram.com/api/v1/'
 
-    def __init__(self):
+    def __init__(self, username, password, auto_login=True):
         self.__un = ''
         self.__pw = ''
         self.users_to_unfollow = self.__get_list('users_to_unfollow.txt')
         self.users_to_search = self.__get_list('list.txt')
         self.__api = None
+        self.InstagramAPI = None
 
-        self.__get_api_methods_list()
+        # self.__get_api_methods_list()
 
         try:
             self.__api = InstagramAPI(self.__un, self.__pw)
-            if not self.__api.isLoggedIn:
+            self.InstagramAPI = self.__api
+            if not self.__api.isLoggedIn and auto_login:
                 self.__api.login()
         except Exception as e:
             print(str(e))
@@ -51,7 +53,7 @@ class InstagramAPIExtended:
         return json.dumps(o)
 
     def get_status(self):
-        print('start', str(self))
+        return str(self)
 
     def get_story_viewers(self, story_pk):
         pass
@@ -309,6 +311,7 @@ class InstagramAPIExtended:
 
 
 if __name__ == '__main__':
-    my = InstagramAPIExtended()
-    my.get_status()
-    # my.__api.logout()
+    myInstagram = InstagramAPIExtended('username', 'password')
+    print(myInstagram.get_status())
+    my_followers = myInstagram.get_all_my_followers()
+    myInstagram.InstagramAPI.logout()
