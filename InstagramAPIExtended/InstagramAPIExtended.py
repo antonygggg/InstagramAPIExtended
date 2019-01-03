@@ -1,11 +1,11 @@
-
 '''
 
 Instagram API extension methods for useful actions
 
 this version uses https://github.com/LevPasha/Instagram-API-python
 
-Python Instagram API as his base
+Python Instagram API as his base, and all of
+InstagramAPI methods can be accessed from InstagramAPIExtended
 
 
 this is a unofficial beta version
@@ -14,18 +14,19 @@ and comes as is
 
 '''
 
+from InstagramAPI import InstagramAPI
+import csv
+import time
+import json
+
 
 class InstagramAPIExtended:
-    from InstagramAPI import InstagramAPI
-    import csv
-    import time
-    import json
 
     version = 'InstagramAPIExtended 0.0.7 beta https://i.instagram.com/api/v1/'
 
     def __init__(self, username, password, auto_login=True):
-        self.__un = ''
-        self.__pw = ''
+        self.__un = username
+        self.__pw = password
         self.users_to_unfollow = self.__get_list('users_to_unfollow.txt')
         self.users_to_search = self.__get_list('list.txt')
         self.__api = None
@@ -44,9 +45,9 @@ class InstagramAPIExtended:
 
     def __str__(self):
         o = {
-            'un': self.__un,
-            'pw': self.__pw,
-            'api.isLoggedIn': self.__api.isLoggedIn
+            'username': self.__un,
+            'password': self.__pw,
+            'InstagramAPI.isLoggedIn': self.__api.isLoggedIn
         }
         return json.dumps(o)
 
@@ -57,11 +58,10 @@ class InstagramAPIExtended:
         pass
 
     def get_my_stories(self):
-        # self.__api.
         return self.get_story(self.__api.username_id)
 
     def get_story(self, username_id):
-        self.__run(self.__api.getStory, username_id)
+        self.__run(self.__api.getStoryViewers, username_id)
         stories = self.__api.LastJson
         return stories
 
@@ -306,10 +306,3 @@ class InstagramAPIExtended:
             except Exception as e:
                 self.__write_log(str(e))
                 return None
-
-
-if __name__ == '__main__':
-    myInstagram = InstagramAPIExtended('username', 'password')
-    print(myInstagram.get_status())
-    my_followers = myInstagram.get_all_my_followers()
-    myInstagram.InstagramAPI.logout()

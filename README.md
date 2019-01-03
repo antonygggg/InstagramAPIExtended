@@ -1,3 +1,12 @@
+### Description
+
+Instagram API extension methods for useful actions
+
+this version uses [Instagram-API-python](https://github.com/LevPasha/Instagram-API-python)
+
+Python Instagram API as his base, and all of
+InstagramAPI methods can be accessed from InstagramAPIExtended
+
 
 ### Installation Instructions
 
@@ -38,14 +47,34 @@
 
 ### Using API :
 
-```
 
+##### Create and login :
+```
 myInstagram = InstagramAPIExtended('username', 'password')
 print(myInstagram.get_status())
-my_followers = myInstagram.get_all_my_followers()
-myInstagram.InstagramAPI.logout()
-
 ```
+
+##### Call api method :
+```
+my_followers = []  # myInstagram.get_all_my_followers()
+for follower in my_followers:
+    print(follower)
+ ```
+
+##### Access InstagramAPI methods :
+```
+myInstagram.InstagramAPI.getPopularFeed()
+feed = myInstagram.InstagramAPI.LastJson
+print(feed)
+```
+
+##### Logout :
+```
+myInstagram.InstagramAPI.logout()
+```
+
+
+
 ### Extended API methods :
 
 ```
