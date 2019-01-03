@@ -7,7 +7,7 @@ def main():
     print(myInstagram.get_status())
 
     # call api method
-    my_followers = []  # myInstagram.get_all_my_followers()
+    my_followers = myInstagram.get_all_my_followers()
     for follower in my_followers:
         print(follower)
 
