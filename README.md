@@ -25,10 +25,10 @@ InstagramAPI methods can be accessed from InstagramAPIExtended
     `pip install -r requirements.txt`
 
 
-4. Modify [example.py](example.py) with your own username and password
+4. Modify [example.py](InstagramAPIExtended/example.py) with your own username and password
 
 
-5. Run the [example.py](example.py) script (**use text editor to edit the script and type in valid Instagram username/password**)
+5. Run the [example.py](InstagramAPIExtended/example.py) script (**use text editor to edit the script and type in valid Instagram username/password**)
 
 
 ### Using API :
