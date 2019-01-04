@@ -10,14 +10,14 @@ InstagramAPI methods can be accessed from InstagramAPIExtended
 
 ### Installation Instructions
 
-1. Fork/Clone/Download this repo
+1. Download this repo
 
-    `git clone https://github.com/LevPasha/Instagram-API-python.git`
+    `git clone https://github.com/antonygggg/InstagramAPIExtended.git`
 
 
 2. Navigate to the directory
 
-    `cd Instagram-API-python`
+    `cd  directory InstagramAPIExtended-master`
 
 
 3. Install the dependencies
@@ -25,25 +25,11 @@ InstagramAPI methods can be accessed from InstagramAPIExtended
     `pip install -r requirements.txt`
 
 
-4. Modify examples\test.py with your own username and password
+4. Modify [example.py](example.py) with your own username and password
 
 
-5. Run the test.py script (**use text editor to edit the script and type in valid Instagram username/password**)
+5. Run the [example.py](example.py) script (**use text editor to edit the script and type in valid Instagram username/password**)
 
-
-
-### Pip Installation Instructions
-1. Install via pip
-
-    `pip install InstagramApi`
-
-    or
-
-    `py -m install InstagramApi`
-
-2. Import InstagramAPI from a python command prompt
-
-    `from InstagramAPI import InstagramAPI` 
 
 ### Using API :
 
