@@ -61,7 +61,7 @@ class InstagramAPIExtended:
         return self.get_story(self.__api.username_id)
 
     def get_story(self, username_id):
-        self.__run(self.__api.getStoryViewers, username_id)
+        self.__run(self.__api.getStory, username_id)
         stories = self.__api.LastJson
         return stories
 
